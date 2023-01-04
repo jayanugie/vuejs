@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Loop Data in Vuejs</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        .active {
+            color: blue;
+            text-decoration: underline;
+        }
+    </style>
   </head>
   <body>
     <div id="vueApp">
@@ -13,7 +19,7 @@
 
       <!-- looping with conditional rendering -->
       <!-- use v-show jika status only true, use v-else-if jika ada kondisi lain-->
-      <ol v-if="status">
+      <ol v-if="status" :class="{active: isActive, 'text-button': text}">
         <li v-for="item in subjects" :key="item.title">
           {{ item.title }} - type - {{ item.type }}
         </li>
@@ -22,6 +28,8 @@
       <div v-else>
         <p>Tidak ada data</p>
       </div>
+
+      <button @click="activate(), changeTextButton()">{{ text }}</button>
     </div>
     <script>
       const { createApp } = Vue;
@@ -34,9 +42,23 @@
               { title: "Vue", type: "Framework" },
               { title: "React", type: "Framework" },
             ],
-            status: false,
+            status: true,
+            isActive: true,
+            text: "Deactivate",
           };
         },
+        methods: {
+            activate() {
+                this.isActive = !this.isActive
+            },
+            changeTextButton() {
+                if (this.isActive === true) {
+                    this.text = "Deactivate"
+                } else {
+                    this.text = "Activate"
+                }
+            }
+        }
       }).mount("#vueApp");
     </script>
   </body>
