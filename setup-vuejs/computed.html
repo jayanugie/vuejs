@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Computed</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="vueApp">
+      <h1>Computed Properties</h1>
+
+      <input type="text" v-model="name" />
+      <input type="number" v-model="age" />
+
+      <p>Namanya {{ name }}, umur dia {{ age }}, {{ expression }}.</p>
+    </div>
+
+    <script>
+      const { createApp } = Vue;
+
+      createApp({
+        data() {
+          return {
+            name: "Nugie",
+            age: 100,
+          };
+        },
+        computed: {
+          expression() {
+            if (this.age > 35) {
+              return "dia sudah tua";
+            } else if (this.age > 13) {
+              return "dia masih muda";
+            } else if (this.age <= 13) {
+              return "dia masih anak kecil";
+            }
+          },
+        },
+      }).mount("#vueApp");
+    </script>
+  </body>
+</html>
