@@ -5,6 +5,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Belajar VueJS</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   </head>
-  <body></body>
+  <body>
+    <div id="vueApp" style="text-align: center">
+      <!-- templates -->
+      <h1>Belajar {{ subject }}</h1>
+      <p>Number: {{ number }}</p>
+
+      <!-- methods -->
+      <button @click="makeItFun()">Make it fun</button>
+      <button @click="count++">Count is: {{ count }}</button>
+
+      <!-- two way data binding -->
+      <div style="margin: 20px">
+        <input type="text" v-model="subject" />
+        <button @click="check()">Check Subject</button>
+        <p>Nilai: {{ score }}</p>
+      </div>
+    </div>
+
+    <script>
+      const { createApp } = Vue;
+
+      createApp({
+        data() {
+          return {
+            subject: "VueJS",
+            number: 0,
+            count: 0,
+            score: 0,
+          };
+        },
+        mounted() {
+          setInterval(() => {
+            this.number++;
+          }, 1000);
+        },
+        methods: {
+          makeItFun() {
+            this.subject = this.subject + " !!!";
+          },
+          check() {
+            if (this.subject === "VueJS") {
+              this.score += 10;
+            } else {
+              this.score -= 5;
+            }
+          },
+        },
+      }).mount("#vueApp");
+    </script>
+  </body>
 </html>
