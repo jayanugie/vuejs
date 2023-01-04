@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loop Data in Vuejs</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="vueApp">
+      <h1>Loop Data in VueJS</h1>
+
+      <!-- looping with conditional rendering -->
+      <!-- use v-show jika status only true, use v-else-if jika ada kondisi lain-->
+      <ol v-if="status">
+        <li v-for="item in subjects" :key="item.title">
+          {{ item.title }} - type - {{ item.type }}
+        </li>
+      </ol>
+
+      <div v-else>
+        <p>Tidak ada data</p>
+      </div>
+    </div>
+    <script>
+      const { createApp } = Vue;
+
+      createApp({
+        data() {
+          return {
+            subjects: [
+              { title: "JavaScript", type: "Native" },
+              { title: "Vue", type: "Framework" },
+              { title: "React", type: "Framework" },
+            ],
+            status: false,
+          };
+        },
+      }).mount("#vueApp");
+    </script>
+  </body>
+</html>
