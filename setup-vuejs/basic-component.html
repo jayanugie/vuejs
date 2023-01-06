@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basic Components</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="vueApp">
+      <h1>Basic Components VueJS</h1>
+      <ol>
+        <li>Basic Component with Props</li>
+        <br />
+        <button-counter title="Say hi" desc="Hallo guys"></button-counter>
+        <button-counter
+          title="Welcome"
+          desc="Welcome to my web"
+        ></button-counter>
+        <button-counter title="Do" desc="Don't forget to buy"></button-counter>
+      </ol>
+    </div>
+
+    <!-- penulisan template bisa dibuat di script di sini, 
+    bisa juga di app.component bagian template mengguanakn dibungkus "" -->
+    <script type="text/x-template" id="blog-template">
+      <button @click="count++">
+          You clicked me {{ count }} times.
+      </button>
+      <h4>{{ title }}</h4>
+      <p>{{ desc }}</p>
+    </script>
+
+    <script>
+      const { createApp } = Vue;
+
+      const app = createApp({});
+
+      app.component("button-counter", {
+        data() {
+          return {
+            count: 0,
+          };
+        },
+        props: ["desc", "title"],
+        template: "#blog-template",
+      });
+
+      app.mount("#vueApp");
+    </script>
+  </body>
+</html>
