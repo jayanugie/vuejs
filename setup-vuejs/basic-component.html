@@ -10,32 +10,66 @@
   <body>
     <div id="vueApp">
       <h1>Basic Components VueJS</h1>
-      <ol>
-        <li>Basic Component with Props</li>
-        <br />
-        <button-counter title="Say hi" desc="Hallo guys"></button-counter>
-        <button-counter
-          title="Welcome"
-          desc="Welcome to my web"
-        ></button-counter>
-        <button-counter title="Do" desc="Don't forget to buy"></button-counter>
-      </ol>
+      <h3>Basic Component with Props</h3>
+      <button-counter
+        title="Say hi"
+        desc="Hallo guys"
+        @trigger-read="read"
+      ></button-counter>
+      <!-- 
+        penulisan trigger pada parent harus menggunakan kebab-case 
+        meskipun di component menggunakan camelCase
+    
+        emit method ini juga bisa disertakan juga dengan parameter dan argument
+      -->
+      <button-counter
+        title="Welcome"
+        desc="Welcome to my web"
+        @trigger-read="read"
+      ></button-counter>
+      <button-counter
+        title="Do"
+        desc="Don't forget to buy"
+        @trigger-read="read"
+      ></button-counter>
+
+      <p>Total selesai: {{ total }}</p>
     </div>
 
-    <!-- penulisan template bisa dibuat di script di sini, 
-    bisa juga di app.component bagian template mengguanakn dibungkus "" -->
+    <!-- 
+    penulisan template bisa dibuat di script di bawah ini, 
+    bisa juga di app.component bagian template dengan dibungkus "" 
+
+    penulisan argument pada emit, bisa diletakan di script di bawah ini (10)
+    atau bisa juga disimpan di bagian read(num) di parent    
+    -->
+
     <script type="text/x-template" id="blog-template">
       <button @click="count++">
           You clicked me {{ count }} times.
       </button>
       <h4>{{ title }}</h4>
       <p>{{ desc }}</p>
+      <button @click="$emit('triggerRead', 10)">Selesai</button>
+      <br />
+      <br />
     </script>
 
     <script>
       const { createApp } = Vue;
 
-      const app = createApp({});
+      const app = createApp({
+        data() {
+          return {
+            total: 0,
+          };
+        },
+        methods: {
+          read(num) {
+            this.total = this.total + num;
+          },
+        },
+      });
 
       app.component("button-counter", {
         data() {
@@ -45,6 +79,7 @@
         },
         props: ["desc", "title"],
         template: "#blog-template",
+        emits: ["triggerRead"],
       });
 
       app.mount("#vueApp");
