@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+    <title>Framework List</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="subject">
+      <h1>Daftar Pelajaran</h1>
+      <p>Total selesai: {{ completedItems }}</p>
+
+      <div>
+        <button @click="showForm = !showForm">Toggle Form</button>
+        <div v-show="showForm">
+          <h3>Add New Data +</h3>
+          <form @submit.prevent="submitForm">
+            <input type="text" name="title" placeholder="title" />
+            <input type="text" name="desc" placeholder="desc" />
+            <input type="text" name="image" placeholder="image" />
+            <input type="submit" value="add new" />
+          </form>
+        </div>
+      </div>
+
+      <div v-for="item in items" class="box" :class="{completed:item.state}">
+        <h2>{{item.title}}</h2>
+        <p>{{item.desc}}</p>
+        <img :src="'img/' + item.image" width="50" />
+        <input
+          type="checkbox"
+          :checked="item.state"
+          @change="item.state = !item.state"
+        />
+      </div>
+    </div>
+
+    <script>
+      const { createApp } = Vue;
+
+      createApp({
+        data() {
+          return {
+            showForm: false,
+            items: [
+              {
+                title: "Vue",
+                desc: "what a green",
+                image: "vue.png",
+                state: true,
+              },
+              {
+                title: "React",
+                desc: "blue from facebook",
+                image: "react.png",
+                state: false,
+              },
+            ],
+          };
+        },
+        methods: {
+          submitForm(event) {
+            const els = event.target.elements;
+
+            let title = els.title.value;
+            let desc = els.desc.value;
+            let image = els.image.value;
+
+            this.items.push({
+              title: title,
+              desc: desc,
+              image: image,
+              state: false,
+            });
+
+            els.title.value = "";
+            els.desc.value = "";
+            els.image.value = "";
+
+            this.showForm = false;
+          },
+        },
+        computed: {
+          completedItems() {
+            return this.items.filter((item) => item.state == true).length;
+          },
+        },
+      }).mount("#subject");
+    </script>
+  </body>
+</html>

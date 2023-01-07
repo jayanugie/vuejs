@@ -1,0 +1,15 @@
+body {
+  width: 80%;
+  margin: 50px auto;
+}
+
+.box {
+  padding: 10px;
+  background: rgb(213, 213, 213);
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.completed {
+    background-color: rgb(205, 255, 213);
+}
