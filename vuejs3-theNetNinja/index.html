@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <h1>Hello, Vue :)</h1>
+
+    <div id="app">
+      <div v-if="showBooks">
+        <ul>
+          <li
+            v-for="book in filteredBooks"
+            :class="{ fav: book.isFav }"
+            @click="toggleFav(book)"
+          >
+            <h3>{{book.title}}</h3>
+            <p>{{book.author}}</p>
+          </li>
+        </ul>
+      </div>
+
+      <button @click="toggleShowBooks">
+        <span v-if="showBooks">Hide Books</span>
+        <span v-else>Show Books</span>
+      </button>
+    </div>
+
+    <script>
+      const app = Vue.createApp({
+        data() {
+          return {
+            url: "http://www.thenetninja.co.uk",
+            showBooks: true,
+            books: [
+              {
+                title: "name of the wind",
+                author: "patrick rothfuss",
+                isFav: true,
+              },
+              {
+                title: "the way of kings",
+                author: "brandon sanderson",
+                isFav: false,
+              },
+              {
+                title: "the final empire",
+                author: "brandon sanderson",
+                isFav: true,
+              },
+            ],
+          };
+        },
+        methods: {
+          toggleShowBooks() {
+            this.showBooks = !this.showBooks;
+          },
+          toggleFav(book) {
+            book.isFav = !book.isFav;
+          },
+        },
+        computed: {
+          filteredBooks() {
+            return this.books.filter((book) => book.isFav);
+          },
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>
