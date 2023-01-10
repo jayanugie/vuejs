@@ -2,12 +2,12 @@
   <h1>{{ title }}</h1>
   <input type="text" ref="name" />
   <button @click="handleClick">click me</button>
-  <Modal />
+  <Modal :header="header" :text="text" theme="sale" />
 </template>
 
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
-import Modal from './components/Modal.vue';
+import Modal from "./components/Modal.vue";
 
 export default {
   name: "App",
@@ -15,6 +15,8 @@ export default {
   data() {
     return {
       title: "My First Vue App :)",
+      header: "Sign up for the Giveaway!",
+      text: "Grab your ninja swag for half price!",
     };
   },
   methods: {
@@ -28,7 +30,6 @@ export default {
 </script>
 
 <style>
-
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -37,5 +38,4 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
-
 </style>
