@@ -6,7 +6,7 @@
     <Modal :header="header" :text="text" theme="sale" @close="toggleModal"/>
   </div>
   <p>Welcome...</p>
-  <button @click="toggleModal">open modal</button>
+  <button @click.alt="toggleModal">open modal (alt)</button>
 </template>
 
 <script>
