@@ -6,19 +6,31 @@
     <Modal :header="header" :text="text" theme="sale" @close="toggleModal">
       <!-- slots -->
       <template v-slot:links>
-        <a href="#">sign up now</a>        
-        <a href="#">more info</a>        
+        <a href="#">sign up now</a>
+        <a href="#">more info</a>
       </template>
       <p>Ninja Giveaway</p>
-
     </Modal>
   </div>
+
+  <div v-if="showModalTwo">
+    <Modal  @close="toggleModalTwo">
+      <h1>Sign up the newsletter</h1>
+      <p>For updates and promo codes!</p>
+    </Modal>
+  </div>
+
   <p>Welcome...</p>
   <button @click.alt="toggleModal">open modal (alt)</button>
+  <button @click="toggleModalTwo">open modal</button>
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
+// challenge
+// - create an extra button to open a different modal
+// - use the same modal component but pass in a different template (slot)
+// - use a different method (e.g. toggleModalTwo) and data (e.g. showModalTwo)
+
 import Modal from "./components/Modal.vue";
 
 export default {
@@ -30,6 +42,7 @@ export default {
       header: "Sign up for the Giveaway!",
       text: "Grab your ninja swag for half price!",
       showModal: false,
+      showModalTwo: false,
     };
   },
   methods: {
@@ -40,6 +53,9 @@ export default {
     },
     toggleModal() {
       this.showModal = !this.showModal;
+    },
+    toggleModalTwo() {
+      this.showModalTwo = !this.showModalTwo;
     },
   },
 };
@@ -63,5 +79,4 @@ a {
   text-decoration: none;
   margin: 10px;
 }
-
 </style>
