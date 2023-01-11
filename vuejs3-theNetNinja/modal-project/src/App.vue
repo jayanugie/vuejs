@@ -3,7 +3,15 @@
   <input type="text" ref="name" />
   <button @click="handleClick">click me</button>
   <div v-if="showModal">
-    <Modal :header="header" :text="text" theme="sale" @close="toggleModal"/>
+    <Modal :header="header" :text="text" theme="sale" @close="toggleModal">
+      <!-- slots -->
+      <template v-slot:links>
+        <a href="#">sign up now</a>        
+        <a href="#">more info</a>        
+      </template>
+      <p>Ninja Giveaway</p>
+
+    </Modal>
   </div>
   <p>Welcome...</p>
   <button @click.alt="toggleModal">open modal (alt)</button>
@@ -46,4 +54,14 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+a {
+  color: #333;
+  padding: 8px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  text-decoration: none;
+  margin: 10px;
+}
+
 </style>
