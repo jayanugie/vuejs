@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import RefsReactive from "../views/RefsReactive.vue";
 import ComputedValue from "../views/ComputedValue.vue";
+import Home from "../views/Home.vue";
 
 const routes = [
   {
@@ -13,11 +14,11 @@ const routes = [
     name: "computed",
     component: ComputedValue,
   },
-  // {
-  //   path: "/computed",
-  //   name: "computed",
-  //   component: ComputedValue,
-  // },
+  {
+    path: "/",
+    name: "home",
+    component: Home,
+  },
 ];
 
 const router = createRouter({
