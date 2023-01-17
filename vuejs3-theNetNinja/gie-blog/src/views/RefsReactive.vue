@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div>
     <h1>Home</h1>
     <h2>Refs</h2>
     <p>{{ ninjaOne.name }} - {{ ninjaOne.age }} - {{ nameOne }}</p>
@@ -14,7 +14,7 @@
 import { ref, reactive } from "vue";
 
 export default {
-  name: "HomeView",
+  name: "RefsReactive",
   setup() {
     // ref vs reactive
     // better to use refs
