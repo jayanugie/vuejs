@@ -1,7 +1,7 @@
 <template>
   <div>
     <Navbar />
-    <h2>Home</h2>
+    <h2>Daftar Makanan</h2>
   </div>
 </template>
 
@@ -10,9 +10,11 @@
 import Navbar from "@/components/Navbar.vue";
 
 export default {
-  name: "HomeView",
+  name: "FoodsView",
   components: {
     Navbar,
   },
 };
 </script>
+
+<style></style>
