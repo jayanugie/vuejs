@@ -148,7 +148,11 @@ export default {
         .catch((err) => console.log(err));
     },
     checkout() {
-      if (this.pesan.nama && this.pesan.noMeja) {
+      if (
+        this.pesan.nama &&
+        this.pesan.noMeja &&
+        this.keranjangs.length !== 0
+      ) {
         this.pesan.keranjang = this.keranjangs;
         axios
           .post("http://localhost:3000/pesanans", this.pesan)
@@ -170,7 +174,7 @@ export default {
           })
           .catch((err) => console.log(err));
       } else {
-        this.$toast.success("Nama dan nomor meja harus diisi.", {
+        this.$toast.success("Keranjang / nama / nomor meja masih kosong.", {
           type: "error",
           position: "top-right",
           duration: 3000,

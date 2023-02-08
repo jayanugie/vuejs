@@ -99,37 +99,12 @@
       "gambar": "lontong-opor-ayam.jpg"
     }
   ],
-  "keranjangs": [
-    {
-      "jumlah_pemesanan": "2",
-      "products": {
-        "id": 6,
-        "kode": "K-06",
-        "nama": "Bakso",
-        "harga": 10000,
-        "is_ready": true,
-        "gambar": "bakso.jpg"
-      },
-      "id": 1
-    }
-  ],
+  "keranjangs": [],
   "pesanans": [
     {
       "nama": "Nugie",
       "noMeja": "2",
       "keranjang": [
-        {
-          "jumlah_pemesanan": "1",
-          "products": {
-            "id": 2,
-            "kode": "K-02",
-            "nama": "Nasi Goreng Telur",
-            "harga": 14000,
-            "is_ready": true,
-            "gambar": "nasi-goreng-telor.jpg"
-          },
-          "id": 1
-        },
         {
           "jumlah_pemesanan": "1",
           "products": {
@@ -140,31 +115,41 @@
             "is_ready": true,
             "gambar": "mie-goreng.jpg"
           },
-          "id": 2
+          "id": 1
         }
       ],
       "id": 1
     },
     {
-      "nama": "Nugie",
+      "nama": "Desi",
       "noMeja": "2",
       "keranjang": [
         {
           "jumlah_pemesanan": "1",
-          "keterangan": "Pake nasi",
           "products": {
-            "id": 9,
-            "kode": "K-09",
-            "nama": "Lontong Opor Ayam",
-            "harga": 18000,
+            "id": 1,
+            "kode": "K-01",
+            "nama": "Sate Ayam",
+            "harga": 16000,
             "is_ready": true,
-            "gambar": "lontong-opor-ayam.jpg"
+            "gambar": "sate-ayam.jpg"
           },
           "id": 1
         },
         {
           "jumlah_pemesanan": "1",
-          "keterangan": "jangan pake bihun",
+          "products": {
+            "id": 2,
+            "kode": "K-02",
+            "nama": "Nasi Goreng Telur",
+            "harga": 14000,
+            "is_ready": true,
+            "gambar": "nasi-goreng-telor.jpg"
+          },
+          "id": 2
+        },
+        {
+          "jumlah_pemesanan": "2",
           "products": {
             "id": 6,
             "kode": "K-06",
@@ -173,35 +158,10 @@
             "is_ready": true,
             "gambar": "bakso.jpg"
           },
-          "id": 2
+          "id": 3
         }
       ],
       "id": 2
-    },
-    {
-      "nama": "s",
-      "noMeja": "1",
-      "keranjang": [],
-      "id": 3
-    },
-    {
-      "nama": "desi",
-      "noMeja": "3",
-      "keranjang": [
-        {
-          "jumlah_pemesanan": "1",
-          "products": {
-            "id": 3,
-            "kode": "K-03",
-            "nama": "Nasi Rames",
-            "harga": 12000,
-            "is_ready": true,
-            "gambar": "nasi-rames.jpg"
-          },
-          "id": 1
-        }
-      ],
-      "id": 4
     }
   ]
 }
