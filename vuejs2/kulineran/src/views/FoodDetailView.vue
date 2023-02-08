@@ -37,19 +37,24 @@
           <h4>
             Harga: <strong>Rp{{ product.harga }}</strong>
           </h4>
-          <form class="mt-4">
+          <form class="mt-4" v-on:submit.prevent>
             <div class="form-group">
               <label for="jumlah_pemesanan">Jumlah Pesan</label>
-              <input type="number" class="form-control" />
+              <input
+                type="number"
+                class="form-control"
+                v-model="pesan.jumlah_pemesanan"
+              />
             </div>
             <div class="form-group">
               <label for="keterangan">Keterangan</label>
               <textarea
+                v-model="pesan.keterangan"
                 class="form-control"
                 placeholder="Pedes, Nasi Setengah, dll."
               ></textarea>
             </div>
-            <button type="submit" class="btn btn-success">
+            <button type="submit" class="btn btn-success" @click="pemesanan">
               <b-icon-cart></b-icon-cart>Pesan
             </button>
           </form>
@@ -71,11 +76,35 @@ export default {
   data() {
     return {
       product: {},
+      pesan: {},
     };
   },
   methods: {
     setProducts(data) {
       this.product = data;
+    },
+    pemesanan() {
+      if (this.pesan.jumlah_pemesanan) {
+        this.pesan.products = this.product;
+        axios
+          .post("http://localhost:3000/keranjangs", this.pesan)
+          .then(() => {
+            this.$toast.success("Sukses Masuk Keranjang.", {
+              type: "success",
+              position: "top-right",
+              duration: 3000,
+              dismissible: true,
+            });
+          })
+          .catch((err) => console.log(err));
+      } else {
+        this.$toast.success("Jumlah Pesanan Harus Diisi.", {
+          type: "error",
+          position: "top-right",
+          duration: 3000,
+          dismissible: true,
+        });
+      }
     },
   },
   mounted() {
