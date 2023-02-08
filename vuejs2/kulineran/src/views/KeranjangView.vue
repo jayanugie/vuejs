@@ -121,7 +121,7 @@ export default {
   },
   data() {
     return {
-      keranjangs: {},
+      keranjangs: [],
       pesan: {},
     };
   },

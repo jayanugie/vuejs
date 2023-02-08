@@ -99,7 +99,20 @@
       "gambar": "lontong-opor-ayam.jpg"
     }
   ],
-  "keranjangs": [],
+  "keranjangs": [
+    {
+      "jumlah_pemesanan": "2",
+      "products": {
+        "id": 6,
+        "kode": "K-06",
+        "nama": "Bakso",
+        "harga": 10000,
+        "is_ready": true,
+        "gambar": "bakso.jpg"
+      },
+      "id": 1
+    }
+  ],
   "pesanans": [
     {
       "nama": "Nugie",
@@ -170,6 +183,25 @@
       "noMeja": "1",
       "keranjang": [],
       "id": 3
+    },
+    {
+      "nama": "desi",
+      "noMeja": "3",
+      "keranjang": [
+        {
+          "jumlah_pemesanan": "1",
+          "products": {
+            "id": 3,
+            "kode": "K-03",
+            "nama": "Nasi Rames",
+            "harga": 12000,
+            "is_ready": true,
+            "gambar": "nasi-rames.jpg"
+          },
+          "id": 1
+        }
+      ],
+      "id": 4
     }
   ]
 }
