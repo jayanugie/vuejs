@@ -100,5 +100,76 @@
     }
   ],
   "keranjangs": [],
-  "pesanans": []
+  "pesanans": [
+    {
+      "nama": "Nugie",
+      "noMeja": "2",
+      "keranjang": [
+        {
+          "jumlah_pemesanan": "1",
+          "products": {
+            "id": 2,
+            "kode": "K-02",
+            "nama": "Nasi Goreng Telur",
+            "harga": 14000,
+            "is_ready": true,
+            "gambar": "nasi-goreng-telor.jpg"
+          },
+          "id": 1
+        },
+        {
+          "jumlah_pemesanan": "1",
+          "products": {
+            "id": 5,
+            "kode": "K-05",
+            "nama": "Mie Goreng",
+            "harga": 13000,
+            "is_ready": true,
+            "gambar": "mie-goreng.jpg"
+          },
+          "id": 2
+        }
+      ],
+      "id": 1
+    },
+    {
+      "nama": "Nugie",
+      "noMeja": "2",
+      "keranjang": [
+        {
+          "jumlah_pemesanan": "1",
+          "keterangan": "Pake nasi",
+          "products": {
+            "id": 9,
+            "kode": "K-09",
+            "nama": "Lontong Opor Ayam",
+            "harga": 18000,
+            "is_ready": true,
+            "gambar": "lontong-opor-ayam.jpg"
+          },
+          "id": 1
+        },
+        {
+          "jumlah_pemesanan": "1",
+          "keterangan": "jangan pake bihun",
+          "products": {
+            "id": 6,
+            "kode": "K-06",
+            "nama": "Bakso",
+            "harga": 10000,
+            "is_ready": true,
+            "gambar": "bakso.jpg"
+          },
+          "id": 2
+        }
+      ],
+      "id": 2
+    },
+    {
+      "nama": "s",
+      "noMeja": "1",
+      "keranjang": [],
+      "id": 3
+    }
+  ]
 }
