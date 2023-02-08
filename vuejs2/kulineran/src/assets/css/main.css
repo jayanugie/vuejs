@@ -38,3 +38,7 @@
 .img-fluid {
   border-radius: 15px;
 }
+
+.hapus {
+  cursor: pointer;
+}

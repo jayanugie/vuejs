@@ -29,7 +29,9 @@
               >Keranjang
               <b-icon-bag></b-icon-bag>
               <span class="badge badge-success ml-2">{{
-                jumlah_pesanans.length
+                updateKeranjang
+                  ? updateKeranjang.length
+                  : jumlah_pesanans.length
               }}</span>
             </router-link>
           </li>
@@ -44,6 +46,7 @@ import axios from "axios";
 
 export default {
   name: "NavbarComponent",
+  props: ["updateKeranjang"],
   data() {
     return {
       jumlah_pesanans: [],
