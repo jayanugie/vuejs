@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import FoodsView from "../views/FoodsView.vue";
 import FoodDetailView from "../views/FoodDetailView.vue";
+import KeranjangView from "../views/KeranjangView.vue";
 
 Vue.use(VueRouter);
 
@@ -21,6 +22,11 @@ const routes = [
     path: "/foods/:id",
     name: "foodsDetail",
     component: FoodDetailView,
+  },
+  {
+    path: "/keranjang",
+    name: "keranjang",
+    component: KeranjangView,
   },
   {
     path: "/about",

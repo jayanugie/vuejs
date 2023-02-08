@@ -125,6 +125,32 @@
         "gambar": "nasi-rames.jpg"
       },
       "id": 2
+    },
+    {
+      "jumlah_pemesanan": "1",
+      "keterangan": "Pedes banget",
+      "products": {
+        "id": 6,
+        "kode": "K-06",
+        "nama": "Bakso",
+        "harga": 10000,
+        "is_ready": true,
+        "gambar": "bakso.jpg"
+      },
+      "id": 3
+    },
+    {
+      "jumlah_pemesanan": "2",
+      "keterangan": "Pedes",
+      "products": {
+        "id": 5,
+        "kode": "K-05",
+        "nama": "Mie Goreng",
+        "harga": 13000,
+        "is_ready": true,
+        "gambar": "mie-goreng.jpg"
+      },
+      "id": 4
     }
   ],
   "pesanans": []
