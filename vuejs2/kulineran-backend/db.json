@@ -119,49 +119,6 @@
         }
       ],
       "id": 1
-    },
-    {
-      "nama": "Desi",
-      "noMeja": "2",
-      "keranjang": [
-        {
-          "jumlah_pemesanan": "1",
-          "products": {
-            "id": 1,
-            "kode": "K-01",
-            "nama": "Sate Ayam",
-            "harga": 16000,
-            "is_ready": true,
-            "gambar": "sate-ayam.jpg"
-          },
-          "id": 1
-        },
-        {
-          "jumlah_pemesanan": "1",
-          "products": {
-            "id": 2,
-            "kode": "K-02",
-            "nama": "Nasi Goreng Telur",
-            "harga": 14000,
-            "is_ready": true,
-            "gambar": "nasi-goreng-telor.jpg"
-          },
-          "id": 2
-        },
-        {
-          "jumlah_pemesanan": "2",
-          "products": {
-            "id": 6,
-            "kode": "K-06",
-            "nama": "Bakso",
-            "harga": 10000,
-            "is_ready": true,
-            "gambar": "bakso.jpg"
-          },
-          "id": 3
-        }
-      ],
-      "id": 2
     }
   ]
 }
